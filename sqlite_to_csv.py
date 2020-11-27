@@ -38,7 +38,7 @@ def extract(sqlite_file_location, csv_save_location):
         rows = _get_table_names(cursor)
         for row in rows:
             table_name = row[1]  # second item is table name
-            with open('{0}/{1}.csv'.format(csv_save_location, table_name), 'w', newline='') as f:
+            with open('{0}/{1}.csv'.format(csv_save_location, table_name), 'w', newline='' , encoding='utf_8_sig') as f:
                 # Get a .csv writer to write rows to file (as this will handle escaping characters)
                 csv_writer = csv.writer(f, quoting=csv.QUOTE_MINIMAL)
 
